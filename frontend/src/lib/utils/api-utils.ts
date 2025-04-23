@@ -20,7 +20,6 @@ export async function sendRequestWithoutPayload<T>(
     method,
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.API_SECRET}`,
     },
     cache: cacheType,
   });
@@ -38,7 +37,6 @@ export async function sendRequestWithPayload<T>(
     method,
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.API_SECRET}`,
     },
     body,
     cache: cacheType,

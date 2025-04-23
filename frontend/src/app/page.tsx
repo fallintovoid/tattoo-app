@@ -1,14 +1,14 @@
-import { helloWorldRoute } from "@/lib/utils/api-routes";
-import { sendRequestWithoutPayload } from "@/lib/utils/api-utils";
+import BaseLayout from "./components/BaseLayout";
+import HomeBanner from "./components/HomeBanner";
+import SearchSection from "./components/SearchSection";
 
 export default async function Home() {
-  const response = await sendRequestWithoutPayload<{ name: string }>(
-    helloWorldRoute,
-    "GET",
-    "no-cache"
+  return (
+    <BaseLayout className="bg-base-100">
+      <div className="flex flex-col gap-15">
+        <HomeBanner />
+        <SearchSection />
+      </div>
+    </BaseLayout>
   );
-
-  console.log(response);
-
-  return <h1>{response.name}</h1>;
 }
